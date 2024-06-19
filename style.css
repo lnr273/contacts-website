@@ -1,0 +1,160 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --backg: rgb(227, 227, 227);
+    --btn: rgb(153, 153, 153);
+}
+
+html{
+    background: var(--backg);
+}
+
+button{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+input{
+    border: none;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-left: 10px;
+    padding: 8px;
+}
+
+.big-header{
+    text-align: center;
+    align-content: center;
+    height: 150px;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: auto max-content max-content;
+    background: var(--backg);
+    padding: 10px 16px;
+    color: rgb(30, 31, 35);
+    height: 80px;
+    align-content: center;
+}
+
+.container{
+    height: 1000px;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: 50px auto max-content max-content;
+    padding: 16px;
+    align-items: center;
+    background-color: white;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    margin: 8px;
+    width: calc(100% - 12px);
+}
+
+.input-content{
+    display: grid;
+    grid-template-columns: 50px auto max-content max-content;
+    padding: 16px;
+    align-items: center;
+    background-color: white;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    margin: 8px;
+    width: calc(100% - 12px);
+}
+
+.cont-btn{
+    display: flex;
+    justify-content: end;
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.photo{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.modal-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.photo{
+    height: 150px;
+    width: 150px;
+    border: none;
+    background-color: rgba(1, 178, 178, 0.5);
+    color: white;
+}
+
+.save-cancel-btn{
+    margin: 10px 20px;
+    border-radius: 5px;
+    width: 150px;
+    border: none;
+    background-color: var(--btn);
+    color: white;
+}
+
+.edit-btn{
+    margin: 0px 10px;
+    width: 50px;
+    padding: 5px;
+    border: none;
+    background-color: var(--btn);
+    color: white;
+    border-radius: 5px;
+}
+
+.delete-btn{
+    width: 50px;
+    padding: 5px;
+    border: none;
+    background-color: var(--btn);
+    color: white;
+    border-radius: 5px;
+}
+
+.contact-logo{
+    padding-top: 5px;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    font-size: larger;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: rgba(1, 178, 178, 0.6);
+    color: white;
+    border-radius: 50%;
+}
+
+.search-add-btn{
+    border: none;
+    align-items: center;
+    margin-left: 15px;
+    background: none;
+}
+
+img{
+    height: 30px;
+    width: 30px;
+}
+
+.hidden{
+    display: none;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aae8c9a9db.js" crossorigin="anonymous"></script>
+    <title>Contatos</title>
+</head>
+<body>
+    <header>
+        <div class="big-header">
+            <h1>Contacts</h1>
+            <button class="search-add-btn" type="button" id="add-contact-header-btn"><i class="fa-solid fa-plus fa-2xl" style="color: #999999;"></i></button>
+        </div>
+        <div class="header" id="header">
+            <h2 class="hidden" id="h2">Contacts</h2>
+            <div class="cont-btn">
+                <button class="search-add-btn" type="button" id="add-contact"><i class="fa-solid fa-plus fa-2xl" style="color: #999999;"></i></button>
+                <button class="search-add-btn" type="button" id="search-btn"><i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #999999;"></i></button>
+                <input class="hidden" id="search-input" type="text" placeholder="Search" autocomplete="off">                
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="modal" class="modal hidden">
+            <form id="form">
+                <input data-index="new" type="text" id="name-input" class="input-content" placeholder="Name" autocomplete="off" required>
+                <input type="text" id="phone-input" class="input-content" placeholder="Phone number" autocomplete="off" required>
+            </form>    
+            <div class="modal-container">
+                <button id="save-contact" type="button" class="save-cancel-btn">Save</button>
+                <button id="cancel-btn" type="button" class="save-cancel-btn">Cancel</button>
+            </div>
+        </div>
+        <div id="container" class="container">
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
