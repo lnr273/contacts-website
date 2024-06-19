@@ -25,7 +25,6 @@ const createContact = (contact) => {
         if (a.name > b.name) return 1
         return 0
     })
-    console.log(dbContact)
     setLocalStorage(dbContact)
 }
 
@@ -41,23 +40,29 @@ const deleteContact = (index) => {
     setLocalStorage(dbContact)
 }
 
-// creating my number
+const re = /^\d+$/
 let myNumber
-let ok = false
-const re = /\d+/
-const contact = getLocalStorage()
-contact.forEach((contact) => {
-    if (contact.index === myNumber) {
-        ok = true
-    }
-})
-if (ok === false) {
-    let myNumber = prompt("Insert your number: ")
-    if (myNumber.match(re)) {
-        const me = {index: myNumber, name: "me", phone: myNumber}
-        createContact(me)
+
+// creating my number
+const creatingMyNumber = () => {
+    let ok = false
+    const contact = getLocalStorage()
+    contact.forEach((contact) => {
+        if (contact.index === myNumber) {
+            ok = true
+        }
+    })
+    if (ok === false) {
+        let myNumber = prompt("Insert your number: ")
+        if (myNumber.match(re)) {
+            const me = {index: myNumber, name: "me", phone: myNumber}
+            createContact(me)
+        } else {
+            creatingMyNumber()
+        }
     }
 }
+if (!localStorage.getItem("dbContacts")) creatingMyNumber()
 
 // crud dom
 const nameInput = document.getElementById("name-input")
@@ -119,18 +124,22 @@ updateContainer()
 // save the contact
 const saveContact = () => {
     if (isValidFields()) {
-        const contact = {
-            name: nameInput.value,
-            phone: phoneInput.value
-        }
-        const index = nameInput.dataset.index
-        if (index === "new") {
-            createContact(contact)
-            clearContainer()
-            updateContainer()
+        if (phoneInput.value.match(re)) {
+            const contact = {
+                name: nameInput.value,
+                phone: phoneInput.value
+            }
+            const index = nameInput.dataset.index
+            if (index === "new") {
+                createContact(contact)
+                clearContainer()
+                updateContainer()
+            } else {
+                updateContact(index, contact)
+                updateContainer()
+            }
         } else {
-            updateContact(index, contact)
-            updateContainer()
+            alert("Invalid number.")
         }
     }
     reset()
